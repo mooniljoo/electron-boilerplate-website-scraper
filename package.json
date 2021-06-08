@@ -1,6 +1,6 @@
 {
   "name": "scarper",
-  "productName": "Artday Scraper",
+  "productName": "Auction Scraper",
   "version": "1.0.1",
   "description": "Auction Web Scraper with content",
   "main": "src/index.js",
