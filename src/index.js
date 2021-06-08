@@ -99,8 +99,8 @@ app.on("activate", () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 
-ipcMain.on("create_xlsx", (event, res, dirName) => {
-  // console.log(res);
+ipcMain.on("createXlsxFile", (event, res, dirName) => {
+  console.log(res);
   try {
     if (!res) {
       return false;
@@ -125,10 +125,6 @@ ipcMain.on("create_xlsx", (event, res, dirName) => {
         obj
       );
       console.log("XLSX has created.");
-      dialog.showMessageBox(null, {
-        message: "성공",
-        detail: fileName + ".xlsx 생성에 성공했습니다",
-      });
       event.returnValue = fileName;
     }
   } catch (e) {
@@ -139,10 +135,10 @@ ipcMain.on("create_xlsx", (event, res, dirName) => {
     event.returnValue = e;
   }
 });
-ipcMain.on("onSelectDirPath", (event) => {
+ipcMain.on("openDialogFile", (event, path) => {
   dialog
     .showOpenDialog(null, {
-      // defaultPath:__dirname,
+      defaultPath: path,
       properties: ["openDirectory"],
     })
     .then((res) => (event.returnValue = res));

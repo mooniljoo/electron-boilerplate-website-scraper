@@ -1,5 +1,6 @@
 html,
-body {
+body,
+p {
   margin: 0;
   padding: 0;
 }
@@ -202,23 +203,55 @@ table {
 }
 nav {
   display: flex;
+  flex-direction: column;
   padding: 10px 0;
 }
-nav > .btn {
-  margin-right: 10px;
+nav > p {
+  display: flex;
+  margin: 0.5em 0;
 }
-input:focus {
-  transition: all 0.5s linear;
-  border-bottom: 1.5px solid #3f3f3f;
+nav > p > label {
+  display: inline-block;
+  align-self: center;
 }
 nav,
 nav input {
   font-size: 1.3em;
   font-weight: 700;
 }
-.state > .stick,
-.state > strong {
-  display: none;
+input:focus {
+  transition: all 0.5s linear;
+  border-bottom: 1.5px solid #3f3f3f;
+}
+nav > div {
+  display: flex;
+}
+nav > div > .btn {
+  margin-right: 5px;
+}
+nav,
+nav input {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  vertical-align: text-top;
+}
+.wrapper_checkbox {
+  display: flex;
+  margin: 0.5em 0;
+}
+.wrapper_checkbox > .col {
+  margin-right: 10px;
+}
+.wrapper_checkbox > .col > input,
+.wrapper_checkbox > .col > label {
+  display: inline-block;
+}
+.state {
+  margin: 5px 0;
 }
 .state.on > strong {
   display: inline;
@@ -228,15 +261,20 @@ nav input {
   text-align: center;
   width: 155px;
   margin-top: 20px;
+  margin-right: 10px;
   -webkit-animation: fade 2s infinite;
   -moz-animation: fade 2s infinite;
 }
+.state > .stick,
+.state > strong {
+  display: none;
+}
 .state.on > .stick {
   display: inline-block;
-  width: 15px;
-  height: 1px;
-  background: #3f3f3f;
-  margin-left: 0;
+  width: 30px;
+  height: 2px;
+  background: #a7a7a7;
+  margin-left: -7px;
   vertical-align: super;
 }
 
@@ -361,7 +399,7 @@ nav input {
 }
 .btn_primary:hover,
 .btn_primary:focus {
-  background-color: #0268d4;
+  background-color: #268fff;
 }
 .btn_info {
   background-color: #949494;
@@ -432,6 +470,12 @@ td {
 th,
 td {
   padding: 0.18em;
+  max-width: 95px;
+}
+th {
+  word-break: keep-all;
+  padding: 0.3em 1px;
+  background: rgb(0 0 0 / 2%);
 }
 th:nth-child(1),
 td:nth-child(1) {
