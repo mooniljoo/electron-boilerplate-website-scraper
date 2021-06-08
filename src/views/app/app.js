@@ -50,7 +50,7 @@ function onCancel(el) {
   boolRunning = false;
 }
 
-function openDialogFile() {
+function openDialogFile(el) {
   //check this element is disabled or not
   if (el.classList.contains("disabled")) return;
   // send to Main Process
